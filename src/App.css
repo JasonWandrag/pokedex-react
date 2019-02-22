@@ -4,43 +4,44 @@
   margin: 0;
 }
 
-div{
-  max-height: 100%;
-}
-
 .header{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .headerLogo{
-  max-height: 9vh;
+  max-height: 8vh;
   display: inline-block;
+  margin: 3%;
 }
 
 .pageTitle{
   display: inline-block;
   text-align: center;
-}
-
-div > p{
-  display: inline-block;
-  padding: 5%;
+  margin: 3%;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 2px #000;
 }
 
 .App-header {
-  background-color: #282c34;
-  height: 10vh;
+  background-color: #ff1c1c;
+  /* height: 10vh; */
   font-size: calc(10px + 2vmin);
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sidebar{
   width : 25%;
-  height: 90vh;
-  /* display: inline-block; */
+  display: flexbox;
   padding:0;
   margin:0;
   float: left;
+  background: #222;
+  color: #fffafa;
 }
 
 .displayArea{
@@ -50,14 +51,23 @@ div > p{
   margin:0;
 }
 
-.listItem{
-  background: #222;
-  color: #fffafa;
+.listItem, .navButton{
   cursor: pointer;
   transition: all .2s linear;
+  padding: 3%;
 }
 
-.listItem:hover{
+.navButton{
+  display: inline-block;
+}
+
+.navButton{
+  width: 50%;
+  text-align: center;
+  border: 2px solid #fffafa;
+}
+
+.listItem:hover, .navButton:hover{
   background: #444;
 }
 
@@ -74,4 +84,116 @@ div > p{
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.pokeTitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokeID{
+  background: red;
+  font-size: 2em;
+  font-weight: bolder;
+  color: #fffafa;
+  text-shadow: 2px 2px 2px #000;
+  height: fit-content;
+  width: fit-content;
+  padding: 3%;
+  border-radius: 50%;
+  margin: 3%;
+  z-index: 2;
+}
+
+.pokeName{
+  background: #222;
+  font-size: 2em;
+  font-weight: bolder;
+  color: #fffafa;
+  text-shadow: 2px 2px 2px #000;
+  height: fit-content;
+  width: auto;
+  padding: 3%;
+  margin: 3%;
+  margin-left: -9%;
+  padding-left: 10%;
+  padding-right: 8%;
+  z-index: 1;
+  border-radius: 0 20px 20px 0;
+}
+
+.pokeImageFlip {
+  display: block;
+  position: relative;
+  z-index: 1000;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  /* background: #444; */
+  border: 3px solid #000;
+  border-radius: 50%;
+}
+.pokeImageFlip .imgFront,
+.pokeImageFlip .imgBack {
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  -webkit-transition: -webkit-transform 1s;
+  transition: transform 1s;
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.pokeImageFlip .imgFront {
+  -moz-transform: perspective(300) rotateY(0);
+  -webkit-transform: perspective(300) rotateY(0);
+  transform: perspective(300) rotateY(0);
+  z-index: 900;
+}
+.pokeImageFlip .imgBack {
+  -moz-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  z-index: 800;
+}
+.pokeImageFlip:hover .imgFront {
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -moz-transform: perspective(300) rotateY(180deg);
+  -webkit-transform: perspective(300) rotateY(180deg);
+  transform: perspective(300) rotateY(180deg);
+}
+.pokeImageFlip:hover .imgBack {
+  z-index: 950;
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -moz-transform: perspective(-300) rotateY(0deg);
+  -webkit-transform: perspective(-300) rotateY(0deg);
+  transform: perspective(-300) rotateY(0deg);
+}
+
+.pokeStats{
+  border: 1px solid #000;
+  padding: 3%;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.pokeStats p{
+ text-transform: capitalize;
+ padding: 5px;
+ display: inline-block;
+ min-width: 50%;
+}
+
+.pokeStats h3{
+  margin-bottom: 3%;
 }

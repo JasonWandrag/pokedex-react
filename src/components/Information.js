@@ -3,15 +3,19 @@ import React from 'react'
 const Information = (props) => {
   return (
     <div>
-      <h1><b>{props.pokemonInfo.id}</b> {props.pokemonInfo.name.toUpperCase()}</h1>
-      <div>
-          <img src={props.pokemonInfo.sprites.front_default} alt="front"/>
-          <img src={props.pokemonInfo.sprites.back_default} alt="back" />
+      <div className="pokeTitle">
+        <div className="pokeID"># {props.pokemonInfo.id}</div>
+        <h1 className="pokeName">{props.pokemonInfo.name.toUpperCase()}</h1>
       </div>
-      <div>
+      
+      <div className="pokeImageFlip">
+          <img className="imgFront" src={props.pokemonInfo.sprites.front_default} alt="front"/>
+          <img className="imgBack" src={props.pokemonInfo.sprites.back_default} alt="back" />
+      </div>
+      <div className="pokeStats">
         <h3>Stats</h3>
         {props.pokemonInfo.stats.map((s,i) => (
-          <p key = {i}>{s.stat.name} : {s.base_stat}</p>
+          <p key = {i}><b>{s.stat.name}</b> : {s.base_stat}</p>
         ))}
       </div>
       <p>Base Experience: {props.pokemonInfo.base_experience}</p>
