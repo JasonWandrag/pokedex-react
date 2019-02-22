@@ -1,0 +1,77 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+div{
+  max-height: 100%;
+}
+
+.header{
+  display: flex;
+}
+
+.headerLogo{
+  max-height: 9vh;
+  display: inline-block;
+}
+
+.pageTitle{
+  display: inline-block;
+  text-align: center;
+}
+
+div > p{
+  display: inline-block;
+  padding: 5%;
+}
+
+.App-header {
+  background-color: #282c34;
+  height: 10vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.sidebar{
+  width : 25%;
+  height: 90vh;
+  /* display: inline-block; */
+  padding:0;
+  margin:0;
+  float: left;
+}
+
+.displayArea{
+  width: 75%;
+  display: inline-block;
+  padding:0;
+  margin:0;
+}
+
+.listItem{
+  background: #222;
+  color: #fffafa;
+  cursor: pointer;
+  transition: all .2s linear;
+}
+
+.listItem:hover{
+  background: #444;
+}
+
+.homeView, .infoView{
+  height: 50vh;
+  border: 2px solid;
+  padding:0;
+  margin:0;
+}
+
+.homeView{
+  text-align: center;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
