@@ -35,7 +35,7 @@
 }
 
 .App-header {
-  background-color: #ff1c1c;
+  background-color: #c12026;
   /* height: 10vh; */
   font-size: calc(10px + 2vmin);
   color: white;
@@ -44,6 +44,7 @@
   align-items: center;
   max-width: 75%;
   margin-left: 25%;
+  border-bottom: 10px solid #06050a;
 }
 
 .sidebar{
@@ -55,7 +56,7 @@
   justify-content: space-between;
   margin:0;
   float: left;
-  background: #222;
+  background: #06050a;
   color: #fffafa;
   position: fixed;
 }
@@ -66,6 +67,11 @@
   padding:0;
   margin:0;
   margin-left: 25%;
+  background: url('https://i.pinimg.com/originals/76/26/d7/7626d73942c01632c95e9691931166e0.jpg');
+  background-position: left;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 80vh;
 }
 
 h4{
@@ -81,7 +87,7 @@ h4{
 .listItem{
   height: 100%;
   width: 100%;
-  padding: 3%;
+  padding: 3% 5%;
 }
 
 .pokeList{
@@ -90,7 +96,6 @@ h4{
   justify-content: space-around;
   align-items: center;
   height: 100%;
-  position: relative;
 }
 
 .listItemContainer{
@@ -116,6 +121,12 @@ h4{
   background: #444;
 }
 
+.disabled{
+  cursor: not-allowed;
+  opacity: 0.5;
+  background: #555;
+}
+
 .homeView, .infoView{
   padding:3%;
   margin:3%;
@@ -136,30 +147,31 @@ h4{
 }
 
 .pokeID{
-  background: red;
+  background: #fffafa;
   font-size: 2em;
   font-weight: bolder;
-  color: #fffafa;
-  text-shadow: 2px 2px 2px #000;
+  color: #06050a;
+  /* text-shadow: 2px 2px 2px #fffafa; */
   height: fit-content;
   width: fit-content;
   padding: 3%;
   border-radius: 50%;
   margin: 3%;
   z-index: 2;
+  border: 10px solid #06050a;
 }
 
 .pokeName{
-  background: #222;
+  background: #06050a;
   font-size: 2em;
   font-weight: bolder;
   color: #fffafa;
   text-shadow: 2px 2px 2px #000;
   height: fit-content;
   width: auto;
-  padding: 3%;
+  padding: 2%;
   margin: 3%;
-  margin-left: -9%;
+  margin-left: -10%;
   padding-left: 10%;
   padding-right: 8%;
   z-index: 1;
@@ -173,8 +185,8 @@ h4{
   width: 30vw;
   height: 30vw;
   margin: 0 auto;
-  /* background: #444; */
-  border: 3px solid #000;
+  background: #fffafa;
+  border: 10px solid #06050a;
   border-radius: 50%;
 
 }
@@ -209,9 +221,9 @@ h4{
   -ms-transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
-  -moz-transform: perspective(300) rotateY(180deg);
-  -webkit-transform: perspective(300) rotateY(180deg);
-  transform: perspective(300) rotateY(180deg);
+  -moz-transform: perspective(300) rotateY(-180deg);
+  -webkit-transform: perspective(300) rotateY(-180deg);
+  transform: perspective(300) rotateY(-180deg);
 }
 .pokeImageFlip:hover .imgBack {
   z-index: 950;
@@ -219,16 +231,17 @@ h4{
   -ms-transform: rotateY(0deg);
   -webkit-transform: rotateY(0deg);
   transform: rotateY(0deg);
-  -moz-transform: perspective(-300) rotateY(0deg);
-  -webkit-transform: perspective(-300) rotateY(0deg);
-  transform: perspective(-300) rotateY(0deg);
+  -moz-transform: perspective(300) rotateY(0deg);
+  -webkit-transform: perspective(300) rotateY(0deg);
+  transform: perspective(300) rotateY(0deg);
 }
 
 .container{
-  border: 1px solid #000;
+  border: 10px solid #06050a;
   padding: 3%;
   border-radius: 20px;
   margin: 10px;
+  background: #fffafa;
 }
 
 .container p{
@@ -242,6 +255,12 @@ h4{
   margin-bottom: 3%;
 }
 
+small{
+  padding: 3%;
+  border-radius: 20px;
+  margin-left: 3%;
+}
+
 select {
   padding: 10px;
   border: 2px solid #222;
@@ -251,3 +270,10 @@ select {
   width: 50%;
   border-radius: 20px;
 }
+
+option{
+  color: #222;
+  background: #fffafa;
+}
+
+
