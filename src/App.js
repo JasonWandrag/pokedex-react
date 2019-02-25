@@ -13,10 +13,10 @@ class App extends Component {
     return (
       <Provider store={store}>
       <div className="App">
+          <Itemlist />
         <header className="App-header">
           <Header branding="Pokemon Information Center"/>
         </header>
-          <Itemlist />
           <Display />
       </div>
       </Provider>

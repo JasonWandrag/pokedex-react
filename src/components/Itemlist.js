@@ -7,7 +7,6 @@ import { getPokemonList, getPokemonInfo, getNextPokemon, getPreviousPokemon } fr
 class Itemlist extends Component {
  
   clickedOn = (url) =>  {
-    console.log(url); 
     this.props.getPokemonInfo(url);
   }
 
@@ -16,25 +15,21 @@ class Itemlist extends Component {
   }
 
   nextButton = (pokemonNext) => {
-    console.log(pokemonNext);
     this.props.getNextPokemon(pokemonNext);
   }
 
   prevButton = (pokemonPrev) => {
-    console.log(pokemonPrev);
     this.props.getPreviousPokemon(pokemonPrev);
   }
 
   render() {
-    console.log(this.props);
-    
     const { pokemonList } = this.props;
     return (
       <div className="sidebar">
       {pokemonList ? (
         <React.Fragment>
           <h4>There are {this.props.pokemonCount} pokemon!</h4>
-          <ul>
+          <ul className="pokeList">
               {pokemonList.map((result,i) => (
                 <div  key = {i} onClick={this.clickedOn.bind(this, result.url)}>
                   <Item 
