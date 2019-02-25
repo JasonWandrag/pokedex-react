@@ -14,37 +14,44 @@ const Information = (props) => {
           <img className="imgBack" src={props.pokemonInfo.sprites.back_default} alt="back" />
       </div>
 
-      <div className="pokeStats">
+      <div className="container">
         <h3>Stats</h3>
         {props.pokemonInfo.stats.map((s,i) => (
-          <p key = {i}><b>{s.stat.name}</b> : {s.base_stat}</p>
+          <p key = {i} className="d-inline"><b>{s.stat.name}</b> : {s.base_stat}</p>
         ))}
       </div>
       
-          <hr />
-
-      <p>Weight: {props.pokemonInfo.weight}</p>
-      <p>Height: {props.pokemonInfo.height}</p>
-      
-          <hr />
-
-      <select>
-        {props.pokemonInfo.abilities.map((v,i) => (
-          <option key = {i}>{v.ability.name}</option>
-          ))}
-      </select>
-      
-      <div>
-        <h3>Moves</h3>
-        {props.pokemonInfo.moves.map((m,i) => (
-          <p key = {i}>{m.move.name}</p>
-        ))}
+      <div className="container">
+        <h3>Basic Information</h3>
+        <p className="d-inline"><b>Weight:</b> {props.pokemonInfo.weight / 10}kg</p>
+        <p className="d-inline"><b>Height:</b> {props.pokemonInfo.height / 10}m</p>
       </div>
-      
-      <div>
+
+      <div className="container">
+          <h3>Types</h3>
         {props.pokemonInfo.types.map((t,i) => (
-          <p key = {i}>Type: {t.type.name}</p>
+          <p key = {i} className="capitalize d-inline">{t.type.name}</p>
         ))}
+      </div>
+
+      <div className="container">
+        <h3>Abilities</h3>
+        <select>
+          {props.pokemonInfo.abilities.map((v,i) => (
+          <option
+            className={v.is_hidden? 'hiddenAbility': null} 
+            key = {i}>{v.ability.name}</option>
+          ))}
+        </select>
+      </div>
+      
+      <div className="container">
+        <h3>Moves</h3>
+        <select>
+          {props.pokemonInfo.moves.map((m,i) => (
+            <option key = {i}>{m.move.name}</option>
+            ))}
+        </select>
       </div>
     </div>
   )

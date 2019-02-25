@@ -39,8 +39,10 @@ class Itemlist extends Component {
                 </div>
               ))}
           </ul>
-          {this.props.pokemonPrev ? <p className="navButton" onClick={this.prevButton.bind(this, this.props.pokemonPrev)} >Previous</p> : null}
-          {this.props.pokemonNext ? <p className="navButton" onClick={this.nextButton.bind(this, this.props.pokemonNext)} >Next</p> : null}
+          <div>
+            {this.props.pokemonPrev ? <p className="navButton" onClick={this.prevButton.bind(this, this.props.pokemonPrev)} >Previous</p> : null}
+            {this.props.pokemonNext ? <p className="navButton" onClick={this.nextButton.bind(this, this.props.pokemonNext)} >Next</p> : null}
+          </div>
         </React.Fragment>
       ):<h1>Loading</h1>}
       </div>
