@@ -29,16 +29,16 @@ class Itemlist extends Component {
       {pokemonList ? (
         <React.Fragment>
           <h4>There are {this.props.pokemonCount} pokemon!</h4>
-          <ul className="pokeList">
+          <div className="pokeList">
               {pokemonList.map((result,i) => (
-                <div  key = {i} onClick={this.clickedOn.bind(this, result.url)}>
+                <div className="listItemContainer" key = {i} onClick={this.clickedOn.bind(this, result.url)}>
                   <Item 
                     name={result.name}
                     url = {result.url}
                   />
                 </div>
               ))}
-          </ul>
+          </div>
           <div>
             {this.props.pokemonPrev ? <p className="navButton" onClick={this.prevButton.bind(this, this.props.pokemonPrev)} >Previous</p> : null}
             {this.props.pokemonNext ? <p className="navButton" onClick={this.nextButton.bind(this, this.props.pokemonNext)} >Next</p> : null}

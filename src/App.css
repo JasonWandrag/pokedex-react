@@ -76,13 +76,12 @@ h4{
 .listItem, .navButton{
   cursor: pointer;
   transition: all .2s linear;
-  padding: 3%;
-  margin: 3%;
 }
 
 .listItem{
   height: 100%;
   width: 100%;
+  padding: 3%;
 }
 
 .pokeList{
@@ -94,7 +93,14 @@ h4{
   position: relative;
 }
 
+.listItemContainer{
+  width: -webkit-fill-available;
+  box-sizing: border-box;
+}
+
 .navButton{
+  padding: 3%;
+  margin: 3%;
   display: inline-block;
 }
 
