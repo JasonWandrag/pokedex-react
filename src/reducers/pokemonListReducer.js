@@ -3,12 +3,16 @@ import {
   GET_POKEMON_INFO,
   GET_NEXT,
   GET_PREV,
-  SEARCH_POKEMON
+  SEARCH_POKEMON,
+  POKEMON_ABILITIES,
+  POKEMON_MOVES
 } from '../actions/types';
 
 const initialState = {
   results: [],
-  info: {}
+  info: [],
+  abilities: [],
+  moves: []
 };
 
 export default function(state = initialState, action) {
@@ -37,6 +41,16 @@ export default function(state = initialState, action) {
       return {
         ...state,
         info: [action.payload]
+      };
+    case POKEMON_ABILITIES:
+      return {
+        ...state,
+        abilities: [action.payload]
+      };
+    case POKEMON_MOVES:
+      return {
+        ...state,
+        moves: [action.payload]
       };
     default:
       return state;

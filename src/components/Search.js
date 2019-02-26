@@ -30,7 +30,6 @@ class Search extends Component {
           value={this.state.value}
           onChange={this.handleChange}
         />
-        <input type='submit' value='Submit' />
       </form>
     );
   }

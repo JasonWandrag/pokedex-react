@@ -3,7 +3,9 @@ import {
   GET_POKEMON_INFO,
   GET_NEXT,
   GET_PREV,
-  SEARCH_POKEMON
+  SEARCH_POKEMON,
+  POKEMON_ABILITIES,
+  POKEMON_MOVES
 } from './types';
 import axios from 'axios';
 
@@ -38,12 +40,33 @@ export const getPreviousPokemon = pokemonPrev => async dispatch => {
     payload: res.data
   });
 };
+
 export const searchPokemon = pokemonSearch => async dispatch => {
   const res = await axios.get(
     `https://pokeapi.co/api/v2/pokemon/${pokemonSearch}`
   );
   dispatch({
     type: SEARCH_POKEMON,
+    payload: res.data
+  });
+};
+
+export const pokeMoves = pokemonMoves => async dispatch => {
+  const res = await axios.get(
+    `https://pokeapi.co/api/v2/moves/${pokemonMoves}`
+  );
+  dispatch({
+    type: POKEMON_MOVES,
+    payload: res.data
+  });
+};
+
+export const pokeAbilities = pokemonAbilities => async dispatch => {
+  const res = await axios.get(
+    `https://pokeapi.co/api/v2/abilities/${pokemonAbilities}`
+  );
+  dispatch({
+    type: POKEMON_ABILITIES,
     payload: res.data
   });
 };

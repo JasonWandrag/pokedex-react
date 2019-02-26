@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { pokeAbilities, pokeMoves } from '../actions/pokemonListActions';
 
-export default class Information extends Component {
+class Information extends Component {
   constructor(props) {
     super(props);
 
@@ -16,6 +19,10 @@ export default class Information extends Component {
       this.setState({ value: false });
     }
   }
+
+  getAbility = url => {
+    this.props.pokeAbilities(url);
+  };
 
   render() {
     return (
@@ -106,3 +113,18 @@ export default class Information extends Component {
     );
   }
 }
+
+Information.propTypes = {
+  pokeAbilities: PropTypes.func,
+  pokeMoves: PropTypes.func
+};
+
+const mapStateToProps = state => ({
+  moves: state.pokemonList.moves,
+  abilities: state.pokemonList.abilities
+});
+
+export default connect(
+  mapStateToProps,
+  { pokeAbilities, pokeMoves }
+)(Information);
