@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const Item = (props) => {
+const Item = props => {
   return (
-    <div className="listItem">
-        <p className="capitalize">{props.name}</p>
+    <div className='listItem'>
+      <p className='capitalize'>{props.name}</p>
     </div>
-  )
-}
+  );
+};
 
 export default Item;

@@ -12,13 +12,13 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-      <div className="App">
+        <div className='App'>
           <Itemlist />
-        <header className="App-header">
-          <Header branding="Pokemon Information Center"/>
-        </header>
+          <header className='App-header'>
+            <Header branding='Pokemon Information Center' />
+          </header>
           <Display />
-      </div>
+        </div>
       </Provider>
     );
   }
